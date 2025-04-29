@@ -64,7 +64,10 @@ export default function PhoneScreen({ navigation }) {
         </Text>
       </Text>
 
-      <Button title="Continue" onPress={() => navigation.navigate("Code")} />
+      <Button
+        title="Continue"
+        onPress={() => navigation.navigate("Code", { phone })}
+      />
     </View>
   );
 }
