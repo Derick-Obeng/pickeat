@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginVertical: 20,
     marginBottom: 100,
+    fontFamily: "Inter",
   },
   codeContainer: {
     flexDirection: "row",
@@ -96,5 +97,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginTop: 10,
     marginBottom: 295,
+    fontFamily: "Inter",
+    color: "#7a7a7a",
   },
 });
