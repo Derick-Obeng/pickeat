@@ -16,10 +16,7 @@ export default function CompleteProfile(navigation) {
 
       <Text style={styles.little}>Let us know how to properly address you</Text>
 
-      <Button
-        title="Continue"
-        onPress={() => navigation.navigate("CProfile")}
-      />
+      <Button title="Continue" onPress={() => navigation.navigate("")} />
     </View>
   );
 }
