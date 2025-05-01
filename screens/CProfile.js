@@ -1,8 +1,22 @@
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  Keyboard,
+} from "react-native";
 import Button from "../components/Button";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { useState } from "react";
+import {
+  TextInput,
+  TouchableWithoutFeedback,
+} from "react-native-gesture-handler";
+import React from "react";
 
-export default function CompleteProfile(navigation) {
+export default function CompleteProfile({ navigation }) {
+  const [firstName, setFirstName] = useState("");
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -11,10 +25,19 @@ export default function CompleteProfile(navigation) {
       >
         <Ionicons name="arrow-back-outline" size={24} color="black" />
       </TouchableOpacity>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <Text style={styles.title}>Complete Profile</Text>
 
-      <Text style={styles.title}>Complete Profile</Text>
-
-      <Text style={styles.little}>Let us know how to properly address you</Text>
+        <View style={styles.inputCont}>
+          <Text style={styles.lable}>First Name</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your first name"
+            value={firstName}
+            onChangeText={(text) => setFirstName(text)}
+          />
+        </View>
+      </TouchableWithoutFeedback>
 
       <Button title="Continue" onPress={() => navigation.navigate("")} />
     </View>
@@ -33,16 +56,29 @@ const styles = StyleSheet.create({
     marginBottom: 100,
     fontFamily: "Inter",
   },
-  little: {
-    fontSize: 12,
+  inputCont: {
+    marginBottom: 20,
+  },
+  lable: {
+    fontSize: 14,
+    fontWeight: 500,
+    marginBottom: 6,
     color: "#767676",
-    textAlign: "center",
-    fontFamily: "Inter",
-    fontWeight: 400,
-    width: 225,
-    height: 15,
-    top: -90.11,
-    left: 25,
-    horizontalAlign: "center",
+    zIndex: 1,
+    position: "absolute",
+    top: 8,
+    left: 12,
+  },
+  input: {
+    height: 55,
+    borderColor: "#767676",
+    borderWidth: 1,
+    borderRadius: 12,
+    paddingLeft: 10,
+    paddingTop: 18,
+    paddingHorizontal: 16,
+    fontSize: 16,
+    backgroundColor: "#E9E9E9",
+    fontWeight: "confident",
   },
 });

@@ -1,12 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Fresh from './screens/Fresh';
-import PhoneScreen from './screens/PhoneScreen';
-import CompleteProfile from './screens/CompleteProfile';
-import Code from './screens/Code'
-
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import Fresh from "./screens/Fresh";
+import PhoneScreen from "./screens/PhoneScreen";
+import CompleteProfile from "./screens/CompleteProfile";
+import Code from "./screens/Code";
+import CProfile from "./screens/CProfile";
 
 const Stack = createStackNavigator();
 
@@ -18,6 +18,7 @@ export default function App() {
         <Stack.Screen component={PhoneScreen} name="PhoneScreen" />
         <Stack.Screen component={CompleteProfile} name="CompleteProfile" />
         <Stack.Screen component={Code} name="Code" />
+        <Stack.Screen component={CProfile} name="CProfile" />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -26,8 +27,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

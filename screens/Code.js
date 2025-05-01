@@ -3,9 +3,13 @@ import {
   Text,
   View,
   StyleSheet,
-  TextInput,
   TouchableOpacity,
+  Keyboard,
 } from "react-native";
+import {
+  TextInput,
+  TouchableWithoutFeedback,
+} from "react-native-gesture-handler";
 import Button from "../components/Button";
 //import { useNavigation } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -26,6 +30,10 @@ export default function Code({ navigation, route }) {
       // Move to the next input field
       inputRefs.current[index + 1]?.focus();
     }
+    if (text.length === 0 && index > 0) {
+      // Move to the previous input field
+      inputRefs.current[index - 1]?.focus();
+    }
   };
 
   return (
@@ -36,26 +44,30 @@ export default function Code({ navigation, route }) {
       >
         <Ionicons name="arrow-back-outline" size={24} color="black" />
       </TouchableOpacity>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <Text style={styles.title}>Enter code</Text>
 
-      <Text style={styles.title}>Enter code</Text>
+        <View style={styles.codeContainer}>
+          {code.map((digit, index) => (
+            // <TouchableWithoutFeedback onPress={Keyboard.dismiss} key={index}>
+            <TextInput
+              key={index}
+              style={styles.codeInput}
+              keyboardType="numeric"
+              maxLength={1}
+              value={digit}
+              onChangeText={(text) => handleChange(text, index)}
+              ref={(ref) => (inputRefs.current[index] = ref)}
+            />
+            //  </TouchableWithoutFeedback>
+          ))}
+        </View>
 
-      <View style={styles.codeContainer}>
-        {code.map((digit, index) => (
-          <TextInput
-            key={index}
-            style={styles.codeInput}
-            keyboardType="numeric"
-            maxLength={1}
-            value={digit}
-            onChangeText={(text) => handleChange(text, index)}
-          />
-        ))}
-      </View>
-
-      <Text style={styles.subtitle}>
-        Enter the four digit code sent to{" "}
-        <Text style={{ fontWeight: "bold" }}>{phone}</Text>
-      </Text>
+        <Text style={styles.subtitle}>
+          Enter the four digit code sent to{" "}
+          <Text style={{ fontWeight: "bold" }}>{phone}</Text>
+        </Text>
+      </TouchableWithoutFeedback>
 
       <Button
         title="Continue"
@@ -91,6 +103,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 20,
     borderRadius: 10,
+    backgroundColor: "#E9E9E9",
   },
   subtitle: {
     textAlign: "center",
