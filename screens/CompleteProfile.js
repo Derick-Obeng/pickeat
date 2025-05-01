@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     horizontalAlign: "center",
   },
   inputCont: {
-    marginBottom: 10,
+    marginBottom: 200,
     top: -50,
   },
   flable: {
@@ -162,6 +162,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
     backgroundColor: "#E9E9E9",
     fontWeight: "confident",
-    marginBottom: 190,
   },
 });

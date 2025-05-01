@@ -7,6 +7,7 @@ import {
 } from "react-native";
 import Button from "../components/Button";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import EvilIcons from "@expo/vector-icons/EvilIcons";
 import { useState } from "react";
 import {
   TextInput,
@@ -29,10 +30,17 @@ export default function CompleteProfile({ navigation }) {
         <Text style={styles.title}>Complete Profile</Text>
 
         <View style={styles.inputCont}>
-          <Text style={styles.lable}>First Name</Text>
+          {firstName === "" && (
+            <EvilIcons
+              style={styles.search}
+              name="search"
+              size={24}
+              color="black"
+            />
+          )}
           <TextInput
             style={styles.input}
-            placeholder="Enter your first name"
+            placeholder={firstName === "" ? "Enter a new address" : ""}
             value={firstName}
             onChangeText={(text) => setFirstName(text)}
           />
@@ -57,25 +65,25 @@ const styles = StyleSheet.create({
     fontFamily: "Inter",
   },
   inputCont: {
-    marginBottom: 20,
+    marginBottom: 360,
+    top: -90,
   },
-  lable: {
-    fontSize: 14,
-    fontWeight: 500,
-    marginBottom: 6,
-    color: "#767676",
-    zIndex: 1,
+  search: {
     position: "absolute",
-    top: 8,
-    left: 12,
+    top: 17,
+    left: 10,
+    zIndex: 1,
+    color: "#228B22",
+    fontSize: 25,
   },
+
   input: {
-    height: 55,
+    height: 50,
     borderColor: "#767676",
     borderWidth: 1,
-    borderRadius: 12,
-    paddingLeft: 10,
-    paddingTop: 18,
+    borderRadius: 10,
+    paddingLeft: 45,
+    paddingTop: "auto",
     paddingHorizontal: 16,
     fontSize: 16,
     backgroundColor: "#E9E9E9",
