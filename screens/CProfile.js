@@ -8,6 +8,8 @@ import {
 import Button from "../components/Button";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
+//import EvilIcons from "@expo/vector-icons/EvilIcons";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { useState } from "react";
 import {
   TextInput,
@@ -16,7 +18,7 @@ import {
 import React from "react";
 
 export default function CompleteProfile({ navigation }) {
-  const [firstName, setFirstName] = useState("");
+  const [email, setEmail] = useState("");
 
   return (
     <View style={styles.container}>
@@ -30,7 +32,7 @@ export default function CompleteProfile({ navigation }) {
         <Text style={styles.title}>Complete Profile</Text>
 
         <View style={styles.inputCont}>
-          {firstName === "" && (
+          {email === "" && (
             <EvilIcons
               style={styles.search}
               name="search"
@@ -39,13 +41,22 @@ export default function CompleteProfile({ navigation }) {
             />
           )}
           <TextInput
-            style={styles.input}
-            placeholder={firstName === "" ? "Enter a new address" : ""}
-            value={firstName}
-            onChangeText={(text) => setFirstName(text)}
+            style={[styles.input, email.length > 0 && { paddingLeft: 10 }]}
+            placeholder={email === "" ? "Enter a new address" : ""}
+            value={email}
+            onChangeText={(text) => setEmail(text)}
           />
         </View>
       </TouchableWithoutFeedback>
+      <View>
+        <MaterialCommunityIcons
+          name="map-marker-radius-outline"
+          size={24}
+          color="black"
+        />
+
+        <EvilIcons name="location" size={24} color="black" />
+      </View>
 
       <Button title="Continue" onPress={() => navigation.navigate("")} />
     </View>
@@ -65,7 +76,7 @@ const styles = StyleSheet.create({
     fontFamily: "Inter",
   },
   inputCont: {
-    marginBottom: 360,
+    marginBottom: 300,
     top: -90,
   },
   search: {
