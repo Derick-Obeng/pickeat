@@ -49,16 +49,34 @@ export default function CompleteProfile({ navigation }) {
         </View>
       </TouchableWithoutFeedback>
       <View>
-        <MaterialCommunityIcons
-          name="map-marker-radius-outline"
-          size={24}
-          color="black"
-        />
+        <View style={styles.greenCont}>
+          <MaterialCommunityIcons
+            name="map-marker-radius-outline"
+            size={24}
+            color="black"
+            style={{ color: "#767676" }}
+          />
+          <Text
+            style={styles.green}
+            onPress={() => console.log("choosing map from app")}
+          >
+            Choose from app
+          </Text>
+        </View>
+        <View style={styles.divider} />
 
-        <EvilIcons name="location" size={24} color="black" />
+        <View style={styles.location}>
+          <EvilIcons
+            name="location"
+            size={24}
+            color="black"
+            style={{ color: "#767676" }}
+          />
+          <Text style={styles.locationText}>Current location</Text>
+        </View>
       </View>
 
-      <Button title="Continue" onPress={() => navigation.navigate("")} />
+      <Button title="Select" onPress={() => navigation.navigate("")} />
     </View>
   );
 }
@@ -99,5 +117,40 @@ const styles = StyleSheet.create({
     fontSize: 16,
     backgroundColor: "#E9E9E9",
     fontWeight: "confident",
+  },
+  greenCont: {
+    flexDirection: "row",
+    alignItems: "center",
+    //marginBottom: 20,
+    bottom: 320,
+  },
+  green: {
+    fontSize: 16,
+    fontFamily: "Inter",
+    color: "#228B22",
+    fontWeight: "bold",
+    marginLeft: 10,
+    left: 5,
+  },
+  divider: {
+    height: 1,
+    width: "100%",
+    backgroundColor: "#767676",
+    marginVertical: 10,
+    bottom: 310,
+  },
+  location: {
+    flexDirection: "row",
+    alignItems: "center",
+    bottom: 300,
+  },
+  locationText: {
+    fontSize: 10,
+    fontFamily: "Inter",
+    color: "#767676",
+    fontWeight: "500",
+    marginLeft: 10,
+    left: 5,
+    bottom: 5,
   },
 });
