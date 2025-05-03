@@ -32,8 +32,8 @@ const useLocation = () => {
         //console.log("Address data", addressData);
 
         if (addressData.length > 0){
-            const {name, city, country} = addressData[0];
-            setAddress(`${name || ""}, ${city || ""}, ${country || ""}`);
+            const {city, region, country} = addressData[0];
+            setAddress(`${city || ""}, ${region || ""}, ${country || ""}`);
         }else {
             setErrorMsg("No address found for this location");
         }
