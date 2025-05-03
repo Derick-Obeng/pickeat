@@ -19,9 +19,9 @@ export default function PhoneScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Image source={require("../assets/img/Logo1.png")} style={styles.image} />
-
-      <Text style={styles.text}>PickEAT PickIT</Text>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <Text style={styles.text}>PickEAT PickIT</Text>
+
         <View style={styles.prow}>
           <CountryCodeDropdownPicker
             selected={selected}
