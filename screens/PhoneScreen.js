@@ -1,48 +1,41 @@
-import { Text, View, StyleSheet, Image, Keyboard } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  Keyboard,
+  TouchableWithoutFeedback,
+} from "react-native";
 import Button from "../components/Button";
-import { useState } from "react";
+//import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import {
-  TextInput,
-  TouchableWithoutFeedback,
-} from "react-native-gesture-handler";
-import { Picker } from "@react-native-picker/picker";
+import CountryCodeDropdownPicker from "react-native-dropdown-country-picker";
 
 export default function PhoneScreen({ navigation }) {
-  const [phone, setPhone] = useState("");
-  const [selectedCode, setSelectedCode] = useState("");
+  const [selected, setSelected] = React.useState("+233");
+  const [phone, setPhone] = React.useState("");
 
   return (
     <View style={styles.container}>
       <Image source={require("../assets/img/Logo1.png")} style={styles.image} />
 
       <Text style={styles.text}>PickEAT PickIT</Text>
-
-      <View style={styles.prow}>
-        <View>
-          <Picker
-            style={styles.codebox}
-            selectedValue={selectedCode}
-            onValueChange={(itemValue) => setSelectedCode(itemValue)}
-            itemStyle={{ fontSize: 12, fontFamily: "Inter" }}
-          >
-            <Picker.Item label="+1" value="GH" />
-            <Picker.Item label="+333" value="US" />
-            <Picker.Item label="+233" value="CA" />
-            <Picker.Item label="+234" value="MX" />
-          </Picker>
-        </View>
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <TextInput
-            style={styles.phon}
-            onChangeText={(text) => setPhone(text)}
-            value={phone}
-            placeholder=" phone number"
-            keyboardType="numeric"
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={styles.prow}>
+          <CountryCodeDropdownPicker
+            selected={selected}
+            setSelected={setSelected}
+            phone={phone}
+            setPhone={setPhone}
+            countryCodeContainerStyles={styles.countryCodeContainerStyle}
+            countryCodeTextStyles={styles.countryCodeTextStyle}
+            phoneStyles={styles.phoneInputStyle}
+            phoneInputContainerStyles={styles.countryCodeContainerStyle}
           />
-        </TouchableWithoutFeedback>
-      </View>
+        </View>
+      </TouchableWithoutFeedback>
+
       <Text style={styles.small}>
         By continuing you agree to our{" "}
         <Text style={styles.link} onPress={() => console.log("Terms clicked")}>
@@ -91,34 +84,45 @@ const styles = StyleSheet.create({
     color: "#228B22",
   },
   prow: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 40,
+    paddingHorizontal: 30,
+    marginTop: 300,
+    top: -150,
+    marginBottom: 90,
   },
 
-  codebox: {
-    marginTop: -75,
+  countryCodeContainerStyle: {
+    //flexDirection: "row",
+    //alignItems: "center",
     backgroundColor: "#E9E9E9",
-    paddingHorizontal: 5,
-    paddingVertical: 2,
-    justifyContent: "center",
-    marginRight: -40,
-    width: 100,
-    height: 55,
-    borderRadius: 15,
+    borderColor: "#228B22",
+    elevation: 3, // Shadow effect for better visibility
   },
-  phon: {
-    width: 230,
-    height: 55,
-    backgroundColor: "#E9E9E9",
-    borderRadius: 15,
-    marginTop: 120,
-    marginLeft: 50,
-    marginBottom: 210,
-    textAlign: "justify",
-    paddingLeft: 10,
+  countryCodeTextStyle: {
+    fontSize: 12,
+    fontWeight: "600",
+    color: "black",
+    //marginLeft: 2, // Space between flag and country code
   },
+  phoneInputContainerStyle: {
+    //flexDirection: "row",
+    //alignItems: "center",
+    //backgroundColor: "#E9E9E9",
+    //padding: 10,
+    //borderRadius: 8,
+    // borderWidth: 1,
+    borderColor: "#228B22",
+    //elevation: 3, // Matches the country code container
+    //width: "100%",
+    //height: "100%", // Ensures proper layout in different screen sizes
+  },
+  //phoneInputStyle: {
+  fontSize: 12,
+  fontWeight: "600",
+  color: "black",
+  marginLeft: 8, // Space between country code and input
+  flex: 1, // Ensures input field expands properly
+  // },
+
   small: {
     width: 310,
     height: 12,

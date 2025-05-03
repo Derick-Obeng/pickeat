@@ -4629,6 +4629,11 @@ react-is@^18.0.0, react-is@^18.2.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.3.1.tgz#e83557dc12eae63a99e003a46388b1dcbb44db7e"
   integrity sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==
 
+react-native-dropdown-country-picker@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/react-native-dropdown-country-picker/-/react-native-dropdown-country-picker-1.0.11.tgz#2ccb8f422b3297f25dc5338f16201b2b8edb2dbb"
+  integrity sha512-KvT2ekZb0o9Ogz+cWj6lolroGT+NuyHE9Dl6yWI2auExKG6JRpJDwBzrYyZ5UgMo6sgwcyRlY1nv9sxUUnbTxA==
+
 react-native-gesture-handler@~2.20.2:
   version "2.20.2"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.20.2.tgz#73844c8e9c417459c2f2981bc4d8f66ba8a5ee66"
