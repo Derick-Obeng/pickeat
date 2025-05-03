@@ -23,6 +23,15 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUseUsageDescription": "This app wants your location .",
+          "locationWhenInUseUsageDescription": "This app wants your location."
+        }
+      ]
+    ]
   }
 }

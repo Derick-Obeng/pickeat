@@ -16,9 +16,11 @@ import {
   TouchableWithoutFeedback,
 } from "react-native-gesture-handler";
 import React from "react";
+import useLocation from "../components/location";
 
-export default function CompleteProfile({ navigation }) {
+export default function CProfile({ navigation }) {
   const [email, setEmail] = useState("");
+  const { address, errorMsg } = useLocation();
 
   return (
     <View style={styles.container}>
@@ -66,13 +68,11 @@ export default function CompleteProfile({ navigation }) {
         <View style={styles.divider} />
 
         <View style={styles.location}>
-          <EvilIcons
-            name="location"
-            size={24}
-            color="black"
-            style={{ color: "#767676" }}
-          />
+          <EvilIcons name="location" size={24} color="#767676" />
           <Text style={styles.locationText}>Current location</Text>
+          <Text style={styles.loc}>
+            {errorMsg ? errorMsg : address || "locating..."}
+          </Text>
         </View>
       </View>
 
@@ -152,5 +152,14 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     left: 5,
     bottom: 5,
+  },
+  loc: {
+    fontFamily: "Inter",
+    fontSize: 15,
+    color: "black",
+    fontWeight: "500",
+    marginLeft: 10,
+    left: -70,
+    top: 7,
   },
 });
