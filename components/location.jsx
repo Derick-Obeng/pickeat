@@ -22,14 +22,14 @@ const useLocation = () => {
         }
 
         let location = await Location.getCurrentPositionAsync({});
-        console.log("Location", location);
+       // console.log("Location", location);
         
         let addressData = await Location.reverseGeocodeAsync({
             latitude: location.coords.latitude,
             longitude: location.coords.longitude,
             
         });
-        console.log("Address data", addressData);
+        //console.log("Address data", addressData);
 
         if (addressData.length > 0){
             const {name, city, country} = addressData[0];

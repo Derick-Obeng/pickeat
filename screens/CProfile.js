@@ -145,13 +145,13 @@ const styles = StyleSheet.create({
     bottom: 300,
   },
   locationText: {
-    fontSize: 10,
+    fontSize: 12,
     fontFamily: "Inter",
     color: "#767676",
     fontWeight: "500",
     marginLeft: 10,
-    left: 5,
-    bottom: 5,
+    left: 3,
+    bottom: 12,
   },
   loc: {
     fontFamily: "Inter",
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     color: "black",
     fontWeight: "500",
     marginLeft: 10,
-    left: -70,
+    left: -85,
     top: 7,
   },
 });
