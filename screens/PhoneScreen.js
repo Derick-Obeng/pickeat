@@ -64,7 +64,8 @@ export default function PhoneScreen({ navigation }) {
 
       <Button
         title="Continue"
-        onPress={() => navigation.navigate("Code", { phone })}
+        onPress={() => navigation.navigate("Code", { phone, country })}
+        disabled={phone.length < 10}
       />
     </View>
   );
@@ -108,24 +109,14 @@ const styles = StyleSheet.create({
     color: "black",
     //marginLeft: 2, // Space between flag and country code
   },
-  phoneInputContainerStyle: {
-    //flexDirection: "row",
-    //alignItems: "center",
-    backgroundColor: "#E9E9E9",
-    //padding: 10,
-    //borderRadius: 8,
-    borderWidth: 1,
-    borderColor: "#228B22",
-    //elevation: 3, // Matches the country code container
-    //width: "100%",
-    //height: "100%", // Ensures proper layout in different screen sizes
-  },
+
   phoneStyle: {
     backgroundColor: "#E9E9E9",
-    borderWidth: 1,
+    borderWidth: 5,
     borderColor: "#228B22",
     padding: 10,
     elevation: 3,
+    flex: 1,
   },
   dropdownStyle: {
     backgroundColor: "#E9E9E9",

@@ -16,6 +16,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function Code({ navigation, route }) {
   const { phone } = route.params;
+  const { country } = route.params;
   const [code, setCode] = useState(["", "", "", ""]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -65,7 +66,7 @@ export default function Code({ navigation, route }) {
 
         <Text style={styles.subtitle}>
           Enter the four digit code sent to{" "}
-          <Text style={{ fontWeight: "bold" }}>{phone}</Text>
+          <Text style={{ fontWeight: "bold" }}>{phone}</Text> {country}{" "}
         </Text>
       </TouchableWithoutFeedback>
 
