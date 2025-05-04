@@ -15,6 +15,7 @@ import CountryCodeDropdownPicker from "react-native-dropdown-country-picker";
 export default function PhoneScreen({ navigation }) {
   const [selected, setSelected] = React.useState("+233");
   const [phone, setPhone] = React.useState("");
+  const [country, setCountry] = React.useState("");
 
   return (
     <View style={styles.container}>
@@ -26,12 +27,16 @@ export default function PhoneScreen({ navigation }) {
           <CountryCodeDropdownPicker
             selected={selected}
             setSelected={setSelected}
+            setCountryDetails={setCountry}
             phone={phone}
             setPhone={setPhone}
             countryCodeContainerStyles={styles.countryCodeContainerStyle}
             countryCodeTextStyles={styles.countryCodeTextStyle}
-            phoneStyles={styles.phoneInputStyle}
-            phoneInputContainerStyles={styles.countryCodeContainerStyle}
+            phoneStyles={styles.phoneStyle}
+            phoneInputContainerStyles={styles.phoneInputContainerStyle}
+            dropdownStyles={styles.dropdownStyle}
+            dropdownTextStyles={styles.dropdownTextStyle}
+            searchStyles={styles.searchStyle}
           />
         </View>
       </TouchableWithoutFeedback>
@@ -106,22 +111,41 @@ const styles = StyleSheet.create({
   phoneInputContainerStyle: {
     //flexDirection: "row",
     //alignItems: "center",
-    //backgroundColor: "#E9E9E9",
+    backgroundColor: "#E9E9E9",
     //padding: 10,
     //borderRadius: 8,
-    // borderWidth: 1,
+    borderWidth: 1,
     borderColor: "#228B22",
     //elevation: 3, // Matches the country code container
     //width: "100%",
     //height: "100%", // Ensures proper layout in different screen sizes
   },
-  //phoneInputStyle: {
-  fontSize: 12,
-  fontWeight: "600",
-  color: "black",
-  marginLeft: 8, // Space between country code and input
-  flex: 1, // Ensures input field expands properly
-  // },
+  phoneStyle: {
+    backgroundColor: "#E9E9E9",
+    borderWidth: 1,
+    borderColor: "#228B22",
+    padding: 10,
+    elevation: 3,
+  },
+  dropdownStyle: {
+    backgroundColor: "#E9E9E9",
+    borderWidth: 1,
+    borderColor: "#228B22",
+    elevation: 3, // Shadow effect for better visibility
+  },
+  dropdownTextStyle: {
+    fontSize: 12,
+    fontFamily: "Aroma",
+    fontWeight: "600",
+    color: "Internal",
+  },
+  searchStyle: {
+    backgroundColor: "#E9E9E9",
+    borderWidth: 1,
+    padding: 10,
+    borderColor: "#228B22",
+    elevation: 3, // Shadow effect for better visibility
+  },
 
   small: {
     width: 310,
