@@ -33,7 +33,6 @@ export default function PhoneScreen({ navigation }) {
             countryCodeContainerStyles={styles.countryCodeContainerStyle}
             countryCodeTextStyles={styles.countryCodeTextStyle}
             phoneStyles={styles.phoneStyle}
-            phoneInputContainerStyles={styles.phoneInputContainerStyle}
             dropdownStyles={styles.dropdownStyle}
             dropdownTextStyles={styles.dropdownTextStyle}
             searchStyles={styles.searchStyle}
