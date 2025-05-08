@@ -76,7 +76,7 @@ export default function CProfile({ navigation }) {
         </View>
       </View>
 
-      <Button title="Select" onPress={() => navigation.navigate("")} />
+      <Button title="Select" onPress={() => navigation.navigate("Map")} />
     </View>
   );
 }
