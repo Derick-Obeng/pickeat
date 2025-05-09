@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     top: -40,
     fontWeight: "bold",
-    textAlign: "center",
+    textAlign: "center", 
     marginVertical: 20,
     marginBottom: 100,
     fontFamily: "Inter",
