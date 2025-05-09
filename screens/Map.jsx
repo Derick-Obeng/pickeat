@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, padding: 15 },
   backButton: { marginTop: 20 },
   title: {
-    fontSize: 24,
+    fontSize: 24, 
     top: -40,
     fontWeight: "bold",
     textAlign: "center", 
