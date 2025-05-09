@@ -5,7 +5,7 @@ import { TouchableWithoutFeedback , TextInput} from 'react-native-gesture-handle
 
 export default function Map({navigation}) {
   return (
-    <View>
+    <View style={styles.container}>
      <TouchableOpacity
             onPress={() => navigation.goBack()}
             style={styles.backButton}
@@ -17,5 +17,7 @@ export default function Map({navigation}) {
             
           </TouchableWithoutFeedback>
     </View>
-  )
+  );
 }
+
+const styles = StyleSheet.create({ })
