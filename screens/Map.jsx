@@ -17,7 +17,7 @@ export default function Map({navigation}) {
              
           </TouchableWithoutFeedback>
     </View>
-  );
+  ); 
 }
 
 const styles = StyleSheet.create({ 
