@@ -14,7 +14,7 @@ export default function Map({navigation}) {
           </TouchableOpacity>
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <Text style={styles.title}>Set delivery address</Text>
-            
+             
           </TouchableWithoutFeedback>
     </View>
   );
