@@ -20,7 +20,7 @@ export default function Map({navigation}) {
   );
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({ 
   container: { flex: 1, padding: 15 },
   backButton: { marginTop: 20 },
   title: {
