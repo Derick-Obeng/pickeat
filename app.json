@@ -28,10 +28,11 @@
       [
         "expo-location",
         {
-          "locationAlwaysAndWhenInUseUsageDescription": "This app wants your location .",
-          "locationWhenInUseUsageDescription": "This app wants your location."
+          "locationAlwaysAndWhenInUseUsageDescription": "PiCKeAt wants your location .",
+          "locationWhenInUseUsageDescription": "PiCKeAt wants your location."
         }
-      ]
+      ],
+      "expo-maps"
     ]
   }
 }
