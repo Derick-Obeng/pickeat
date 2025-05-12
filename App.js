@@ -7,7 +7,7 @@ import PhoneScreen from "./screens/PhoneScreen";
 import CompleteProfile from "./screens/CompleteProfile";
 import Code from "./screens/Code";
 import CProfile from "./screens/CProfile";
-import Map from "./screens/Map";
+import Map from "./screens/Mapp";
 
 const Stack = createStackNavigator();
 
@@ -20,7 +20,7 @@ export default function App() {
         <Stack.Screen component={CompleteProfile} name="CompleteProfile" />
         <Stack.Screen component={Code} name="Code" />
         <Stack.Screen component={CProfile} name="CProfile" />
-        <Stack.Screen component={Map} name="Map" />
+        <Stack.Screen component={Mapp} name="Mapp" />
       </Stack.Navigator>
     </NavigationContainer>
   );

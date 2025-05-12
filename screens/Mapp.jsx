@@ -1,9 +1,10 @@
 import { View, Text ,StyleSheet,TouchableOpacity, Keyboard} from 'react-native'
 import React from 'react'
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { TouchableWithoutFeedback , TextInput} from 'react-native-gesture-handler'
+import { TouchableWithoutFeedback , TextInput} from 'react-native-gesture-handler';
+import Map from '../components/Mapping';
 
-export default function Map({navigation}) {
+export default function Mapp({navigation}) {
   return (
     <View style={styles.container}>
      <TouchableOpacity
@@ -16,6 +17,7 @@ export default function Map({navigation}) {
             <Text style={styles.title}>Set delivery address</Text>
              
           </TouchableWithoutFeedback>
+          <Map/>
     </View>
   ); 
 }
